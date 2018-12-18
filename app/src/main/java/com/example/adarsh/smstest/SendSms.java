@@ -1,0 +1,38 @@
+package com.example.adarsh.smstest;
+
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
+import android.telephony.SmsManager;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+public class SendSms extends AppCompatActivity implements View.OnClickListener {
+
+    EditText txtNumber, txtMessage;
+    Button btnSend;
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.sendmsg);
+
+        txtNumber = (EditText) findViewById(R.id.txtNumber);
+        txtMessage = (EditText) findViewById(R.id.txtMesssage);
+        btnSend = (Button) findViewById(R.id.btnSMS);
+        btnSend.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v == btnSend) {
+
+            SmsManager smsManager = SmsManager.getDefault();
+            smsManager.sendTextMessage(txtNumber.getText().toString(), null,txtMessage.getText().toString(), null, null);
+            Toast.makeText(this, "Message sent successfully", Toast.LENGTH_LONG)
+                    .show();
+
+        }
+    }
+}

@@ -1,0 +1,18 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.adarsh.smstest.Intro"
+    android:background="@drawable/spamspot2">
+    <!-- TODO: Update blank fragment layout -->
+    <Button
+        android:layout_width="220dp"
+        android:layout_height="70dp"
+        android:id="@+id/button2"
+        android:layout_marginBottom="165dp"
+        android:background="@null"
+        android:onClick="ps"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
